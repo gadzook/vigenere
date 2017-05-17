@@ -21,7 +21,7 @@ Caps = 2
 ```
 
 
-run it with these parameters and you get:
+encrypt it with these parameters and you get:
 ```
 SSCP AEDJ FPKS WZFO WKLP LXNZ BOST EHAY CLRE DZDF PRRP ZEHW FVJI PRSO HRDI
 YMYR WHZR TQAI COII WEGL AEPD OLWV YDYG FYIH ZRXD AMLN IHWJ XDBV TDAW STPQ
