@@ -60,9 +60,10 @@ class Vigenere():
         text = self.stripped_text
         key = self.get_key()
         result_text = ""
+        key_iteration = 0
         for i in range(len(text)):
             text_letter = text[i]
-            key_letter = key[i%len(key)]
+            key_letter = key[key_iteration%len(key)]
             if text_letter in ascii_lowercase:
                 alphabet = ascii_lowercase
             elif text_letter in ascii_uppercase:
@@ -72,6 +73,7 @@ class Vigenere():
                 continue
             text_number = alphabet.find(text_letter)
             key_number = alphabet.lower().find(key_letter)
+            key_iteration += 1
 
             if function == "e":
                 result_number = (text_number + key_number) % len(alphabet)
@@ -87,7 +89,7 @@ class Vigenere():
         with open("output_text.txt","w") as output:
             output.write(result_text)
 
-        print("Encrypting...\n\n")
+        print("Processing...\n\n")
         print(result_text+"\n\n")
         return result_text
 
