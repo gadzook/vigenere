@@ -6,9 +6,10 @@ Add text to be processed in input_text.txt, and it will be written to output_tex
 Here's an example.
 
 # text:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas fringilla interdum. In vitae sapien arcu. Nullam at iaculis mauris. Maecenas eu malesuada sapien. Quisque ut nibh ex. Phasellus ac nibh blandit, dapibus neque nec, pulvinar mi. Nunc luctus, nulla quis iaculis tempor, velit purus auctor libero, tempor laoreet leo metus id leo. Nullam egestas aliquet nulla efficitur pulvinar. Donec consequat consequat erat, vitae cursus libero tempus at. In sed est dictum, mattis sem sed, laoreet tellus.
+>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas fringilla interdum. In vitae sapien arcu. Nullam at iaculis mauris. Maecenas eu malesuada sapien. Quisque ut nibh ex. Phasellus ac nibh blandit, dapibus neque nec, pulvinar mi. Nunc luctus, nulla quis iaculis tempor, velit purus auctor libero, tempor laoreet leo metus id leo. Nullam egestas aliquet nulla efficitur pulvinar. Donec consequat consequat erat, vitae cursus libero tempus at. In sed est dictum, mattis sem sed, laoreet tellus.
 
-# key: `helloworld`
+# key: 
+`helloworld`
 
 # config:
 
