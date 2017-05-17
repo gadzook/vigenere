@@ -3,7 +3,7 @@ Home-made vigenere cipher project in python3. needs dependency ConfigParser. you
 
 Add text to be processed in input_text.txt, and it will be written to output_text.txt. You will be prompted for the encryption key for both.
 
-### Here's an example.
+### Example:
 
 text:
 >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce egestas fringilla interdum. In vitae sapien arcu. Nullam at iaculis mauris. Maecenas eu malesuada sapien. Quisque ut nibh ex. Phasellus ac nibh blandit, dapibus neque nec, pulvinar mi. Nunc luctus, nulla quis iaculis tempor, velit purus auctor libero, tempor laoreet leo metus id leo. Nullam egestas aliquet nulla efficitur pulvinar. Donec consequat consequat erat, vitae cursus libero tempus at. In sed est dictum, mattis sem sed, laoreet tellus.
