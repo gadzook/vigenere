@@ -13,13 +13,28 @@ class Vigenere():
         self.RowLength = int(self.config['Formatting']['RowLength'])
         self.Caps = int(self.config['Formatting']['Caps'])
 
-        #get text
-        self.input_text = open("input_text.txt","r").read()
-        self.stripped_text = "".join(char for char in self.input_text if char in printable)
+    def choose_text(self):
+        if input("Use input file? [Y/n]: ").lower().strip() not in {"n","no"}:
+            input_text = open("input_text.txt","r").read()
+            stripped_text = "".join(char for char in input_text if char in printable)
+        else:
+            input_text = input("Enter text here:\n")
+            stripped_text = "".join(char for char in input_text if char in printable)
+        return stripped_text
+
+    def choose_method(self):
+        choice = input("Would you like to (e)ncrypt or (d)ecrypt the input text? ")
+        if choice == "e" or choice == "d":
+            return choice
+        else:
+            print("Invalid choice.")
+            self.choose_method()
 
     def get_key(self):
-        input_key = input("Enter key: ")
+        input_key = input("Enter key (letters only): ")
         stripped_key = "".join([char for char in input_key.lower() if char in ascii_lowercase])
+        if len(stripped_key) == 0:
+            stripped_key = "a"
         return stripped_key
 
     def format(self,text):
@@ -56,8 +71,7 @@ class Vigenere():
 
         return result_text
 
-    def vigenere(self,function):
-        text = self.stripped_text
+    def vigenere(self,method,text):
         key = self.get_key()
         result_text = ""
         key_iteration = 0
@@ -75,7 +89,7 @@ class Vigenere():
             key_number = alphabet.lower().find(key_letter)
             key_iteration += 1
 
-            if function == "e":
+            if method == "e":
                 result_number = (text_number + key_number) % len(alphabet)
             else:
                 result_number = (text_number - key_number) % len(alphabet)
@@ -83,7 +97,7 @@ class Vigenere():
             result_letter = alphabet[result_number]
             result_text = result_text + result_letter
 
-        if function == "e":
+        if method == "e":
             result_text = self.format(result_text)
 
         with open("output_text.txt","w") as output:
@@ -94,12 +108,9 @@ class Vigenere():
         return result_text
 
     def run(self):
-        choice = input("Would you like to (e)ncrypt or (d)ecrypt the input text? ")
-        if choice == "e" or choice == "d":
-            return self.vigenere(choice)
-        else:
-            print("Invalid choice.")
-            self.run()
+        text = self.choose_text()
+        method = self.choose_method()
+        self.vigenere(method,text)
 
 vigenere = Vigenere()
 vigenere.run()
